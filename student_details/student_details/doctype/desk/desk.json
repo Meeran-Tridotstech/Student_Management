@@ -1,0 +1,351 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "D.####",
+ "creation": "2025-07-10 16:02:58.748693",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_1_section",
+  "img",
+  "photo",
+  "column_break_erlb",
+  "name1",
+  "roll_no",
+  "class",
+  "inr",
+  "section_break_eqgo",
+  "color",
+  "image_path",
+  "submit",
+  "column_break_kfcg",
+  "date",
+  "duration",
+  "link",
+  "column_break_cusz",
+  "dynamic_link",
+  "date_and_time",
+  "float",
+  "section_break_eqij",
+  "html_editor",
+  "long_text",
+  "column_break_kiyd",
+  "markdown_editor",
+  "json",
+  "section_break_yqci",
+  "heading",
+  "phone",
+  "password",
+  "rating",
+  "html",
+  "column_break_sxzj",
+  "percent",
+  "read_only",
+  "select",
+  "time",
+  "paid",
+  "icon",
+  "section_4_section",
+  "barcode",
+  "table",
+  "column_break_rjrt",
+  "signature",
+  "small_text",
+  "section_break_ifuq",
+  "code",
+  "text",
+  "table_multi",
+  "column_break_ifun",
+  "map",
+  "text_editor"
+ ],
+ "fields": [
+  {
+   "fieldname": "roll_no",
+   "fieldtype": "Int",
+   "label": "Roll No"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_erlb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "image_path",
+   "fieldtype": "Attach Image",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "section_break_eqgo",
+   "fieldtype": "Section Break",
+   "label": "Section 2"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Autocomplete",
+   "label": "Class",
+   "options": "I\nII\nIII\nIV\nV\nVI\nVII\nIX\nX\nXI\nXII"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
+  },
+  {
+   "fieldname": "inr",
+   "fieldtype": "Currency",
+   "label": "INR"
+  },
+  {
+   "fieldname": "column_break_kfcg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Link",
+   "label": "Link",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "submit",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_cusz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dynamic_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Dynamic Link",
+   "options": "link"
+  },
+  {
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "float",
+   "fieldtype": "Float",
+   "label": "Float"
+  },
+  {
+   "fieldname": "section_break_eqij",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_editor",
+   "fieldtype": "HTML Editor",
+   "label": "HTML Editor"
+  },
+  {
+   "fieldname": "long_text",
+   "fieldtype": "Long Text",
+   "label": "Long Text"
+  },
+  {
+   "fieldname": "column_break_kiyd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "markdown_editor",
+   "fieldtype": "Markdown Editor",
+   "label": "Markdown Editor"
+  },
+  {
+   "fieldname": "json",
+   "fieldtype": "JSON",
+   "label": "Json"
+  },
+  {
+   "fieldname": "section_break_yqci",
+   "fieldtype": "Section Break",
+   "label": "Section 3"
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "label": "Barcode"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "HTML"
+  },
+  {
+   "fieldname": "heading",
+   "fieldtype": "Heading",
+   "label": "Heading"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Icon",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_sxzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "label": "Percent"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "read_only",
+   "fieldtype": "Read Only",
+   "label": "Read Only"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "select",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Table",
+   "label": "Table",
+   "options": "Child"
+  },
+  {
+   "fieldname": "small_text",
+   "fieldtype": "Small Text",
+   "label": "Small Text"
+  },
+  {
+   "fieldname": "section_break_ifuq",
+   "fieldtype": "Section Break",
+   "label": "Section 5"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Code",
+   "label": "Code"
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Text",
+   "label": "Text"
+  },
+  {
+   "fieldname": "column_break_ifun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "map",
+   "fieldtype": "Geolocation",
+   "label": "Map"
+  },
+  {
+   "fieldname": "text_editor",
+   "fieldtype": "Text Editor",
+   "label": "Text Editor"
+  },
+  {
+   "fieldname": "img",
+   "fieldtype": "Image",
+   "label": "Img",
+   "options": "photo"
+  },
+  {
+   "fieldname": "table_multi",
+   "fieldtype": "Table MultiSelect",
+   "label": "Table Multi",
+   "options": "Child"
+  },
+  {
+   "fieldname": "section_1_section",
+   "fieldtype": "Section Break",
+   "label": "Section 1"
+  },
+  {
+   "fieldname": "section_4_section",
+   "fieldtype": "Section Break",
+   "label": "Section 4"
+  },
+  {
+   "fieldname": "column_break_rjrt",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-10 18:10:35.311213",
+ "modified_by": "Administrator",
+ "module": "Student Details",
+ "name": "Desk",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

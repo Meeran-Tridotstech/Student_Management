@@ -5,8 +5,10 @@ import frappe
 from frappe.model.document import Document
 
 class Student_Marks(Document):
-    @frappe.whitelist()
-    def student(self):
-        # a = f"{self.student_name} : {self.subject} - {self.marks} ({self.status})"
-        frappe.log_error(f"{self.student_name} : {self.subject} - {self.marks} ({self.status})", "hello")
-        return f"Received Marks For {self.student_name} : {self.subject} - {self.marks} ({self.status})"
+    # @frappe.whitelist()
+    # def student(self):
+    #     # a = f"{self.student_name} : {self.subject} - {self.marks} ({self.status})"
+    #     frappe.log_error(f"{self.student_name} : {self.subject} - {self.marks} ({self.status})", "hello")
+    #     return f"Received Marks For {self.student_name} : {self.subject} - {self.marks} ({self.status})"
+
+    frappe.publish_realtime("custom_event")

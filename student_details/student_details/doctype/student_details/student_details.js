@@ -27,11 +27,27 @@ frappe.ui.form.on("Student_Details", {
 
     //SET ROUTE():
     //-----------
-    frm.add_custom_button("BUTTON 1",()=>{
-        // frappe.set_route("list","Student_Marks")     //Nvigate to the Listview Page
-        // frappe.set_route("app/student_marks/SD0007")   //Path Is set
-        frappe.set_route("list","Student_Marks",filter={'status':'Pass'})
+    // frm.add_custom_button("BUTTON 1",()=>{
+    //     // frappe.set_route("list","Student_Marks")     //Nvigate to the Listview Page
+    //     // frappe.set_route("app/student_marks/SD0007")   //Path Is set
+    //     frappe.set_route("list","Student_Marks",filter={'status':'Pass'})
+    // })
+
+
+    //Page API:
+    //--------
+    frm.add_custom_button("Page API",()=>{
+        let page = frappe.ui.make_app_page({
+            title:"My Page",
+            parent : wrapper,
+            single_column : true,
+        })
+        page.set_title("My Page")
     })
+
+
+
+
     },
 
 });

@@ -1,0 +1,25 @@
+{
+ "content": null,
+ "creation": "2025-07-10 19:38:39.883770",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "Icon",
+ "idx": 0,
+ "modified": "2025-07-10 19:44:50.385840",
+ "modified_by": "Administrator",
+ "module": "Student Details",
+ "name": "student-details-page",
+ "owner": "Administrator",
+ "page_name": "student-details-page",
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Student"
+}
