@@ -242,3 +242,20 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+#Schedule Task:
+#-------------
+
+
+# scheduler_events ={
+#     "cron" : {
+#         "* * * * *" :[
+#             "student_details.tasks.cron"
+#         ]
+#     },
+
+#     "all" : ["student_details.tasks.all"],
+#     "daily": ["student_details.tasks.daily"],
+#     "hourly":["student_details.tasks.hourly"],
+#     "weekly":["student_details.tasks.weekly"],
+#     "monthly":["student_details.tasks.monthly"],
+# }
