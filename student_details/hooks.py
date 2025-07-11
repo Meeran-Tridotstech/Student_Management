@@ -261,3 +261,6 @@ scheduler_events ={
 }
 
 app_include_css = "/assets/your_app/css/student_details.css"
+
+
+app_include_js = ["your_app/public/js/chart.js"]    #This is my Realtime Chart File-> page->chart.js

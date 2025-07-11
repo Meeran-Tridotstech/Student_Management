@@ -1,0 +1,25 @@
+{
+ "content": null,
+ "creation": "2025-07-11 15:49:28.547969",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "",
+ "idx": 0,
+ "modified": "2025-07-11 15:49:28.547969",
+ "modified_by": "Administrator",
+ "module": "Student Details",
+ "name": "chart",
+ "owner": "Administrator",
+ "page_name": "chart",
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Parlimentary Election - [1983 - 2023]"
+}

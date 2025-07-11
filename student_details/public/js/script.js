@@ -78,7 +78,7 @@ const buildChart = async()=>{
     const chart = new frappe.Chart("#chart",{
         title :"Finnish Parlimentary elections",
         data :chartData,
-        type :"axis-mixed",
+        type :"bar",
         height:400,
         colors:['#f54b4b','#ffe55','#006288','#349a29','#61bf1a','#f00a64','#ffdd93','#0135a5'],
     })

@@ -27,11 +27,12 @@ frappe.ui.form.on("Student_Details", {
 
     //SET ROUTE():
     //-----------
-    // frm.add_custom_button("BUTTON 1",()=>{
-    //     // frappe.set_route("list","Student_Marks")     //Nvigate to the Listview Page
-    //     // frappe.set_route("app/student_marks/SD0007")   //Path Is set
-    //     frappe.set_route("list","Student_Marks",filter={'status':'Pass'})
-    // })
+    frm.add_custom_button("BUTTON 1",()=>{
+        console.log(frm)
+        frappe.set_route(["list","Student_Marks","Kanban"])     //Nvigate to the Listview Page
+        // frappe.set_route("app/student_details/S_D0030")   //Path Is set
+        // frappe.set_route("list","Student_Marks",filter={'status':'Fail'})
+    })
 
 
     //Page API:
