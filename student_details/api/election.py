@@ -17,16 +17,27 @@ def publish_election_data():
         frappe.throw("Failed to fetch data from Finland API")
 
     data = res.json()
-    parties_raw = list(data["dimension"]["Sukupuoli"]["category"]["label"].values())
+
+    # Extract labels (years) and party names
     labels = list(data["dimension"]["Vuosi"]["category"]["label"].values())
+    parties_raw = list(data["dimension"]["Sukupuoli"]["category"]["label"].values())
     values = data["value"]
+
+    # Dynamically calculate the number of years
+    years_count = len(labels)
+
+    # Calculate offset length for each party block
+    items_per_year = int(len(values) / years_count)
 
     parties = []
     for index, party in enumerate(parties_raw):
-        party_support = [values[i * 8 + index] for i in range(10)]
+        party_support = []
+        for year in range(years_count):
+            offset = year * items_per_year
+            party_support.append(values[offset + index])
         parties.append({
             "name": party,
-            "values": list(reversed(party_support))
+            "values": party_support
         })
 
     frappe.publish_realtime("election_data_updated", {
