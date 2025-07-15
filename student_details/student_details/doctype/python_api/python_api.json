@@ -9,13 +9,16 @@
   "user_name",
   "mail_id",
   "password",
-  "status"
+  "status",
+  "table_xcrk"
  ],
  "fields": [
   {
    "fieldname": "user_name",
    "fieldtype": "Data",
-   "label": "User Name"
+   "in_list_view": 1,
+   "label": "User Name",
+   "reqd": 1
   },
   {
    "fieldname": "mail_id",
@@ -32,12 +35,18 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Approved\nPending\nRejected"
+  },
+  {
+   "fieldname": "table_xcrk",
+   "fieldtype": "Table",
+   "label": "Child",
+   "options": "Child"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-12 19:24:26.049108",
+ "modified": "2025-07-14 17:36:34.379855",
  "modified_by": "Administrator",
  "module": "Student Details",
  "name": "Python API",

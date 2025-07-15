@@ -6,10 +6,17 @@ frappe.ui.form.on("Python API", {
 
         //Realtime Event:
         //-------------
-        // frappe.realtime.on('event_name',(data)=>{
+        // frappe.realtime.on('event_name', (data) => {
         //     console.log(data)
+        //     frappe.msgprint(
+        //         msg = data.message,
+        //         title = "Notification",
+        //         indicator = "green"
+        //     )
         // })
-    console.log(frm)
+        // console.log(frm)
+
+        //Python API
         frm.add_custom_button("Document API", () => {
             frappe.call({
                 method: "student_details.student_details.doctype.python_api.python_api.document_api",
@@ -20,5 +27,6 @@ frappe.ui.form.on("Python API", {
                 }
             });
         });
+
     },
 });
