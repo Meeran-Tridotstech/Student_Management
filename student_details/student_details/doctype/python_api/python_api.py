@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import now
 
 class PythonAPI(Document):
 	pass
@@ -34,17 +35,16 @@ class PythonAPI(Document):
 	# 	frappe.log_error(title="Single doctype GET",message = frappe.as_json(doc))
 
 
-#Record created
+#Record created #Not Worked
 #--------------
 # @frappe.whitelist()
 # def document_api():
 # 	try:
 # 		doc = frappe.get_doc({
 # 			'doctype': 'Python API',
-# 			'title': 'New Task'
 # 		})
-# 		frappe.log_error(title="get_doc", message=frappe.as_json(doc))
-# 		doc.insert()
+# 		frappe.log_error(title="get_doc", message=frappe.as_json(doc.name))
+# 		# doc.insert()
 # 		return {"message": "Document inserted"}
 # 	except Exception:
 # 		frappe.log_error(title="document_api_error", message=frappe.get_traceback())
@@ -311,19 +311,46 @@ class PythonAPI(Document):
 #     frappe.msgprint(f"Validation completed for document: {doc.name}")
 
 
-#frappe.send_email()
-@frappe.whitelist()
-def document_api(self,emails,message):
-	for email in emails:
-		frappe.sendmail(recipients = email,subject = f"Notification from {self.name}",
-		message =  message,
-		reference_doctype = self.doctype,
-		reference_name = self.name
-		)
-	return f"Emails  sent to :{','.join(emails)}"
+#frappe.send_email()   #Not Worked
+	# @frappe.whitelist()
+	# def document_api(self,emails,message):
+	# 	for email in emails:
+	# 		frappe.sendmail(recipients = email,subject = f"Notification from {self.name}",
+	# 		message =  message,
+	# 		reference_doctype = self.doctype,
+	# 		reference_name = self.name
+	# 		)
+	# 	return f"Emails  sent to :{','.join(emails)}"
 
-doc = frappe.get_doc("Python API", "Py-API-0009")
-email_list = ["meeran@example.com", "sheik@example.com"]
+	# doc = frappe.get_doc("Python API", "Py-API-0009")
+	# email_list = ["meeran@example.com", "sheik@example.com"]
+	# doc.queue_action('document_api', emails=email_list, message="Howdy from the server!")
 
-# Queue the task to send emails
-doc.queue_action('document_api', emails=email_list, message="Howdy from the server!")
+
+
+#db_insert()
+# @frappe.whitelist()
+# def document_api():
+# 	doc= frappe.get_doc(doctype="Python API",user_name="Parvesh")
+# 	doc.db_insert()
+# 	frappe.msgprint(f"Successfully Inserted {doc.name}")
+
+
+
+# @frappe.whitelist()
+# def document_api():
+#     last_doc = frappe.get_all(
+#         "Python API",
+#         filters={"user_name": "Musharaf"},
+#         order_by="creation desc",
+#         limit=1
+#     )
+#     if last_doc:
+#         doc = frappe.get_doc("Python API", last_doc[0].name)
+#         doc.last_active = now()
+#         doc.save()
+#         frappe.msgprint(f"Updated Doc: {doc.name} successfully!")
+#         return {"status": "success", "doc_name": doc.name}
+#     else:
+#         frappe.msgprint("No document found for user 'Musharaf'.")
+#         return {"status": "failed", "message": "Document not found"}
