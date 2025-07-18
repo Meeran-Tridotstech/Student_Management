@@ -1,4 +1,3 @@
-
 app_name = "student_details"
 app_title = "Student Details"
 app_publisher = "Meeran Sheik"
@@ -266,7 +265,3 @@ app_include_css = "/assets/your_app/css/student_details.css"
 
 app_include_js = ["your_app/public/js/chart.js"]    #This is my Realtime Chart File-> page->chart.js
 
-
-website_route_rules = [
-    {"from_route": "/jinja-api-view", "to_route": "jinja_api_view"}
-]
