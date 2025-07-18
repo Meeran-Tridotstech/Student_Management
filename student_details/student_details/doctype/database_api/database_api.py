@@ -159,31 +159,98 @@ class DatabaseAPI(Document):
 # 	frappe.msgprint("Total Database Count :"+str(val))
 
 
-#frappe.db.delete()		#Not worked
+
+#frappe.db.delete is used to delete records from the database.
+# @frappe.whitelist()	#
+# def db_api():
+#   threshold_date = frappe.utils.now_datetime() - timedelta(days=30)
+#   frappe.db.delete("Database API", {
+#       "modified": ["<", threshold_date],
+#       "status": "Failed"
+#   })
+#   frappe.db.commit()
+#   frappe.msgprint("Old failed database entries have been deleted.")
+ 
+    #All Records are deleted
+    # frappe.db.delete("Database API")
+ 
+ 
+#frappe.db.truncate is used to remove all records from the table.
+# @frappe.whitelist()
+# def db_api():
+#     frappe.db.truncate("Database API")
+#     frappe.msgprint("All entries in the Database table have been removed.")
+ 
+ 
+ 
+#frappe.db.commit(): remove only failed records
+# @frappe.whitelist()
+# def db_api():
+#     frappe.db.delete("Database API", {"status": "Failed"})
+#     frappe.db.commit()
+#     frappe.msgprint("Failed entries removed and changes committed.")
+ 
+ 
+#Frappe.db.sql:
+# @frappe.whitelist()
+# def db_api():
+#     val = frappe.db.sql("""
+#         SELECT
+#             user_name,
+#             email_id
+#         FROM
+#             `tabDatabase API`
+#     """, as_dict=True)
+
+#     message = "\n".join([f"{row['user_name']} → {row['email_id']}" for row in val])
+#     frappe.msgprint(f"User & Mail List:\n{message}")
+
+
+#frappe.db.rename of table:		#All Record are deleted
+# @frappe.whitelist()
+# def db_api():
+# 	val = frappe.db.rename_table("Database API","DB API")
+# 	frappe.msgprint(f"Record Name is Changed :",val)
+
+
+#frappe.db.describe
+# @frappe.whitelist()
+# def db_api():
+# 	val = frappe.db.describe("Database API")
+# 	desc = "\n".join([f"{field[0]} -> {field[1]} \n" for field in val])
+# 	frappe.msgprint(f"Describe the database : \n {desc} ")
+
+
 @frappe.whitelist()
 def db_api():
-    # Identify latest record to keep for user 'Nithish'
-    last_record_to_keep = frappe.get_list("Database API",
-        filters={"user_name": "Nithish"},
-        fields=["user_name", "modified"],
-        order_by="modified desc",
-        limit=1
-    )
+    def write_to_disk():
+        with open("/tmp/testfile.txt", "w") as f:
+            f.write("This file was created during transaction.\n")
 
-    if not last_record_to_keep:
-        frappe.throw("No record found to retain. Deletion aborted.")
+    def delete_from_disk():
+        import os
+        try:
+            os.remove("/tmp/testfile.txt")
+            frappe.logger().info("Rollback file cleanup done.")
+        except FileNotFoundError:
+            frappe.logger().warning("File not found during rollback cleanup.")
 
-    cutoff = last_record_to_keep[0]['modified']
+    def create_file():
+        write_to_disk()
+        frappe.db.after_rollback.add(delete_from_disk)
+        frappe.db.after_commit.add(
+            lambda: frappe.logger().info("Transaction committed. File preserved.")
+        )
 
-    frappe.log_error(
-        title="Delete the Particular records",
-        message=f"Deleting records for Nithish before: {cutoff}"
-    )
-
-    frappe.db.delete("Database API", {
-        "modified": ("<", cutoff),
-        "user_name": "Nithish"
+    # Simulate a DB change
+    doc = frappe.get_doc({
+        "doctype": "Database API",
+        "user_name": "Test User",
+        "mail_id": "test@example.com"
     })
+    doc.insert()
 
-    return {"status": "success", "cutoff": cutoff}
+    # Create external side effect
+    create_file()
 
+    frappe.msgprint("Transaction is in progress. Watch for commit or rollback logs.")
