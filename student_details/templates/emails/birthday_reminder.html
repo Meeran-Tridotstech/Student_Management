@@ -1,0 +1,14 @@
+{% if birthday_persons %}
+<div style="font-family: sans-serif;">
+  <h2>🎂 Birthday Reminder</h2>
+  <p>{{ reminder_text }}</p>
+  <ul>
+    {% for person in birthday_persons %}
+      <li><strong>{{ person }}</strong> — don’t forget to wish them!</li>
+    {% endfor %}
+  </ul>
+  <p>{{ message }}</p>
+</div>
+{% else %}
+<p>No birthdays today!</p>
+{% endif %}
