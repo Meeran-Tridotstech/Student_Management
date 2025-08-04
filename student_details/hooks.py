@@ -247,22 +247,23 @@ app_license = "mit"
 #-------------
 
 
-scheduler_events ={
-    "cron" : {
-        "0 * * * *" :[
-            "student_details.tasks.cron"
-        ]
-    },
+# scheduler_events ={
+#     "cron" : {
+#         "* * * * *" :[
+#             "student_details.tasks.cron"
+#         ]
+#     },
 
-    "all" : ["student_details.tasks.all"],
+    # "all" : ["student_details.tasks.all"],
 #     "daily": ["student_details.tasks.daily"],
 #     "hourly":["student_details.tasks.hourly"],
 #     "weekly":["student_details.tasks.weekly"],
 #     "monthly":["student_details.tasks.monthly"],
-}
+# }
 
-app_include_css = "/assets/your_app/css/student_details.css"
+app_include_css = "/assets/student_details/css/student_details.css"
 
 
-app_include_js = ["your_app/public/js/chart.js"]    #This is my Realtime Chart File-> page->chart.js
+app_include_js = "/assests/student_details/js/chart.js"   #This is my Realtime Chart File-> page->chart.js
 
+app_include_js = "/assets/student_details/js/jinja_api_list.js"

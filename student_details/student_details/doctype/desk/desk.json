@@ -303,7 +303,7 @@
   {
    "fieldname": "table_multi",
    "fieldtype": "Table MultiSelect",
-   "label": "Table Multi",
+   "label": "Table Multiliselect",
    "options": "Child"
   },
   {
@@ -324,7 +324,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-10 18:10:35.311213",
+ "modified": "2025-07-22 11:44:22.441898",
  "modified_by": "Administrator",
  "module": "Student Details",
  "name": "Desk",
